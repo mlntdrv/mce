@@ -56,4 +56,13 @@ public class Money implements Comparable<Money> {
 
         return Double.compare(amount, m.amount);
     }
+
+    @Override
+    public boolean equals(Object m){
+        Money mCast = (Money) m;
+
+        if(currency.equals(mCast.currency) && amount == mCast.getAmount()) return true;
+
+        return false;
+    }
 }
