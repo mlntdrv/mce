@@ -12,6 +12,10 @@ class Visit {
         this.products = products;
     }
 
+    public Invoice getInvoice(){
+        return invoice;
+    }
+
     protected void addProduct(Product product) throws Exception {
         products.add(product);
 
