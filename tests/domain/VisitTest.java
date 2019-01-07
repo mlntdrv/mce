@@ -29,4 +29,22 @@ class VisitTest {
 
         assertEquals(new Money(25.9, Currency.getInstance("BGN")), v.getInvoice().getTotalAmount());
     }
+
+    @Test
+    void constructorThenAddProduct() throws Exception {
+        Product bh = new Product("bromhexin", new Money(5.9, Currency.getInstance("BGN")));
+        Product me = new Product("Medical Examination", new Money(20, Currency.getInstance("BGN")));
+        List<Product> prods = new ArrayList<>();
+        prods.add(bh);
+        prods.add(me);
+
+        Visit v = new Visit(prods);
+
+        assertEquals(new Money(25.9, Currency.getInstance("BGN")), v.getInvoice().getTotalAmount());
+
+        Product prod = new Product("novphiline", new Money(5, Currency.getInstance("BGN")));
+        v.addProduct(prod);
+
+        assertEquals(new Money(30.9, Currency.getInstance("BGN")), v.getInvoice().getTotalAmount());
+    }
 }
