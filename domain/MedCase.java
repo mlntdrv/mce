@@ -30,8 +30,4 @@ class MedCase {
     public void addVisit(Visit visit){
 
     }
-
-    public static void main(String args[]){
-
-    }
 }
