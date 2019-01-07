@@ -11,6 +11,7 @@ class MedCase {
     private String        treatment;
     private LocalDate     caseDate;
     private LocalDate     lastModDate;
+
     private List<Visit>   visits;
     //private List<Invoice> invoices;
     
@@ -28,6 +29,10 @@ class MedCase {
     }
 
     public void addVisit(Visit visit){
+        visits.add(visit);
+    }
 
+    public List<Visit> getVisits() {
+        return visits;
     }
 }
