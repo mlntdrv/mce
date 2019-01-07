@@ -29,16 +29,16 @@ public class Money implements Comparable<Money> {
         this.currency = currency;
     }
 
-    public Money add(Money moneyToAdd) throws Exception {
-        if(!currency.equals(moneyToAdd.currency)) throw new Exception(EX_MSG);
+    public Money add(Money moneyToAdd) throws IllegalArgumentException {
+        if(!currency.equals(moneyToAdd.currency)) throw new IllegalArgumentException(EX_MSG);
         
         amount += moneyToAdd.amount;
         
         return this;
     }
     
-    public Money sub(Money moneyToSubtract) throws Exception {
-        if(!currency.equals(moneyToSubtract.currency)) throw new Exception(EX_MSG);
+    public Money sub(Money moneyToSubtract) throws IllegalArgumentException {
+        if(!currency.equals(moneyToSubtract.currency)) throw new IllegalArgumentException(EX_MSG);
         
         amount -= moneyToSubtract.amount;
         
